@@ -1,58 +1,66 @@
-// Espera que el documento esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
-  // Crea dinámicamente el filtro de telas
-  const telasSection = document.getElementById("telas");
+  const telas = [
+    { nombre: 'Algodón', tipo: 'algodon', imagen: 'https://via.placeholder.com/150?text=Algodón' },
+    { nombre: 'Lino', tipo: 'lino', imagen: 'https://via.placeholder.com/150?text=Lino' },
+    { nombre: 'Mezclilla', tipo: 'mezclilla', imagen: 'https://via.placeholder.com/150?text=Mezclilla' },
+    { nombre: 'Seda', tipo: 'seda', imagen: 'https://via.placeholder.com/150?text=Seda' },
+    { nombre: 'Franela', tipo: 'franela', imagen: 'https://via.placeholder.com/150?text=Franela' }
+  ];
 
+  const contenedor = document.getElementById('listaTelas');
+  const filtroTexto = document.getElementById('filtroTelas');
+
+  // Crear el filtro desplegable
   const filtroLabel = document.createElement("label");
   filtroLabel.textContent = "Filtrar por tipo: ";
   filtroLabel.style.fontWeight = "bold";
   filtroLabel.style.marginRight = "10px";
 
-  const filtro = document.createElement("select");
-  filtro.innerHTML = `
+  const filtroTipo = document.createElement("select");
+  filtroTipo.innerHTML = `
     <option value="todas">Todas</option>
     <option value="algodon">Algodón</option>
     <option value="lino">Lino</option>
     <option value="mezclilla">Mezclilla</option>
     <option value="seda">Seda</option>
+    <option value="franela">Franela</option>
   `;
+  filtroTipo.style.marginBottom = "1rem";
 
-  const resultado = document.createElement("div");
-  resultado.style.marginTop = "1rem";
+  const sectionTelas = document.getElementById('telas');
+  sectionTelas.insertBefore(filtroLabel, contenedor);
+  sectionTelas.insertBefore(filtroTipo, contenedor);
 
-  // Agrega los elementos al DOM
-  telasSection.appendChild(filtroLabel);
-  telasSection.appendChild(filtro);
-  telasSection.appendChild(resultado);
+  function mostrarTelas(lista) {
+    contenedor.innerHTML = '';
+    lista.forEach(tela => {
+      const div = document.createElement('div');
+      div.classList.add('tela-item');
+      div.innerHTML = `
+        <img src="${tela.imagen}" alt="${tela.nombre}" style="width:150px;height:150px;border-radius:10px;">
+        <p>${tela.nombre}</p>
+      `;
+      contenedor.appendChild(div);
+    });
+  }
 
-  // Función para actualizar resultados
-  const mostrarTelas = (tipo) => {
-    const telas = {
-      algodon: "https://via.placeholder.com/300x200?text=Algodón",
-      lino: "https://via.placeholder.com/300x200?text=Lino",
-      mezclilla: "https://via.placeholder.com/300x200?text=Mezclilla",
-      seda: "https://via.placeholder.com/300x200?text=Seda",
-    };
+  function aplicarFiltros() {
+    const texto = filtroTexto.value.toLowerCase();
+    const tipo = filtroTipo.value;
 
-    resultado.innerHTML = "";
+    const filtradas = telas.filter(tela => {
+      const coincideTexto = tela.nombre.toLowerCase().includes(texto);
+      const coincideTipo = tipo === 'todas' || tela.tipo === tipo;
+      return coincideTexto && coincideTipo;
+    });
 
-    for (let clave in telas) {
-      if (tipo === "todas" || clave === tipo) {
-        const img = document.createElement("img");
-        img.src = telas[clave];
-        img.alt = clave;
-        img.style.width = "200px";
-        img.style.margin = "10px";
-        resultado.appendChild(img);
-      }
-    }
-  };
+    mostrarTelas(filtradas);
+  }
 
-  // Evento para cuando el usuario cambia el filtro
-  filtro.addEventListener("change", () => {
-    mostrarTelas(filtro.value);
-  });
+  filtroTexto.addEventListener('input', aplicarFiltros);
+  filtroTipo.addEventListener('change', aplicarFiltros);
 
-  // Mostrar todas al inicio
-  mostrarTelas("todas");
+  // Mostrar todas las telas al cargar
+  mostrarTelas(telas);
 });
+
