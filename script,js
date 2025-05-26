@@ -1,0 +1,58 @@
+// Espera que el documento esté completamente cargado
+document.addEventListener("DOMContentLoaded", function () {
+  // Crea dinámicamente el filtro de telas
+  const telasSection = document.getElementById("telas");
+
+  const filtroLabel = document.createElement("label");
+  filtroLabel.textContent = "Filtrar por tipo: ";
+  filtroLabel.style.fontWeight = "bold";
+  filtroLabel.style.marginRight = "10px";
+
+  const filtro = document.createElement("select");
+  filtro.innerHTML = `
+    <option value="todas">Todas</option>
+    <option value="algodon">Algodón</option>
+    <option value="lino">Lino</option>
+    <option value="mezclilla">Mezclilla</option>
+    <option value="seda">Seda</option>
+  `;
+
+  const resultado = document.createElement("div");
+  resultado.style.marginTop = "1rem";
+
+  // Agrega los elementos al DOM
+  telasSection.appendChild(filtroLabel);
+  telasSection.appendChild(filtro);
+  telasSection.appendChild(resultado);
+
+  // Función para actualizar resultados
+  const mostrarTelas = (tipo) => {
+    const telas = {
+      algodon: "https://via.placeholder.com/300x200?text=Algodón",
+      lino: "https://via.placeholder.com/300x200?text=Lino",
+      mezclilla: "https://via.placeholder.com/300x200?text=Mezclilla",
+      seda: "https://via.placeholder.com/300x200?text=Seda",
+    };
+
+    resultado.innerHTML = "";
+
+    for (let clave in telas) {
+      if (tipo === "todas" || clave === tipo) {
+        const img = document.createElement("img");
+        img.src = telas[clave];
+        img.alt = clave;
+        img.style.width = "200px";
+        img.style.margin = "10px";
+        resultado.appendChild(img);
+      }
+    }
+  };
+
+  // Evento para cuando el usuario cambia el filtro
+  filtro.addEventListener("change", () => {
+    mostrarTelas(filtro.value);
+  });
+
+  // Mostrar todas al inicio
+  mostrarTelas("todas");
+});
