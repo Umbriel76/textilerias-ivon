@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const telas = [
     { nombre: 'Algodón', tipo: 'algodon', imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREzysF-SGpFsCoeAtJjG5jzwzPiLS767dN8w&s' },
     { nombre: 'Lino', tipo: 'lino', imagen: 'https://revuelta.pe/cdn/shop/products/Lino-DMC.jpg?v=1712761380&width=1445' },
-    { nombre: 'Mezclilla', tipo: 'mezclilla', imagen: 'https://via.placeholder.com/150?text=Mezclilla' },
-    { nombre: 'Seda', tipo: 'seda', imagen: 'https://via.placeholder.com/150?text=Seda' },
-    { nombre: 'Franela', tipo: 'franela', imagen: 'https://via.placeholder.com/150?text=Franela' }
+    { nombre: 'Mezclilla', tipo: 'mezclilla', imagen: 'https://www.hitega.cl/blog/wp-content/uploads/2021/02/telas-de-mezclilla.jpg' },
+    { nombre: 'Seda', tipo: 'seda', imagen: 'https://m.media-amazon.com/images/I/714XhlWf3nL.jpg' },
+    { nombre: 'Franela', tipo: 'franela', imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMzJyQnh85FsLLpfFU-TJ1N4yTlfg4GEDzOw&s' }
   ];
 
   const contenedor = document.getElementById('listaTelas');
