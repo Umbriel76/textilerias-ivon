@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const telas = [
-    { nombre: 'Algodón', tipo: 'algodon', imagen: 'https://via.placeholder.com/150?text=Algodón' },
-    { nombre: 'Lino', tipo: 'lino', imagen: 'https://via.placeholder.com/150?text=Lino' },
+    { nombre: 'Algodón', tipo: 'algodon', imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREzysF-SGpFsCoeAtJjG5jzwzPiLS767dN8w&s' },
+    { nombre: 'Lino', tipo: 'lino', imagen: 'https://revuelta.pe/cdn/shop/products/Lino-DMC.jpg?v=1712761380&width=1445' },
     { nombre: 'Mezclilla', tipo: 'mezclilla', imagen: 'https://via.placeholder.com/150?text=Mezclilla' },
     { nombre: 'Seda', tipo: 'seda', imagen: 'https://via.placeholder.com/150?text=Seda' },
     { nombre: 'Franela', tipo: 'franela', imagen: 'https://via.placeholder.com/150?text=Franela' }
