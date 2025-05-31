@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. DATOS DE TELAS (completa lista)
   // ================================
   const telas = [
-    { nombre: "Algodón Rojo", tipo: "algodón", color: "rojo", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREzysF-SGpFsCoeAtJjG5jzwzPiLS767dN8w&s" },
-    { nombre: "Lino Azul", tipo: "lino", color: "azul", img: "https://revuelta.pe/cdn/shop/products/Lino-DMC.jpg?v=1712761380&width=1445" },
-    { nombre: "Mezclilla Negra", tipo: "mezclilla", color: "negro", img: "https://www.hitega.cl/blog/wp-content/uploads/2021/02/telas-de-mezclilla.jpg" },
-    { nombre: "Seda Blanca", tipo: "seda", color: "blanco", img: "https://m.media-amazon.com/images/I/714XhlWf3nL.jpg" },
-    { nombre: "Franela Verde", tipo: "franela", color: "verde", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMzJyQnh85FsLLpfFU-TJ1N4yTlfg4GEDzOw&s" }
+    { nombre: "Algodón Rojo", tipo: "algodón", color: "rojo", img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREzysF-SGpFsCoeAtJjG5jzwzPiLS767dN8w&s' },
+    { nombre: "Lino Azul", tipo: "lino", color: "azul", img: 'https://revuelta.pe/cdn/shop/products/Lino-DMC.jpg?v=1712761380&width=1445' },
+    { nombre: "Mezclilla Negra", tipo: "mezclilla", color: "negro", img: 'https://www.hitega.cl/blog/wp-content/uploads/2021/02/telas-de-mezclilla.jpg' },
+    { nombre: "Seda Blanca", tipo: "seda", color: "blanco", img: 'https://m.media-amazon.com/images/I/714XhlWf3nL.jpg' },
+    { nombre: "Franela Verde", tipo: "franela", color: "verde", img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMzJyQnh85FsLLpfFU-TJ1N4yTlfg4GEDzOw&s' }
   ];
 
   // ================================
@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. RENDERIZAR CATÁLOGO DE DISEÑOS
   // ================================
   const catalogo = [
-    { nombre: "Vestido Floral", categoria: "vestido", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz268yQSi2GNA4O_kb0PbkRFgYKMqhWjVVVA&s" },
-    { nombre: "Vestido Elegante", categoria: "vestido", img: "https://img.kwcdn.com/product/fancy/f72115f5-8241-4ff7-8ba5-c46a050ec9ab.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp" },
+    { nombre: "Vestido Floral", categoria: "vestido", img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz268yQSi2GNA4O_kb0PbkRFgYKMqhWjVVVA&s' },
+    { nombre: "Vestido Elegante", categoria: "vestido", img: 'https://img.kwcdn.com/product/fancy/f72115f5-8241-4ff7-8ba5-c46a050ec9ab.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp' },
     { nombre: "Camisa Casual", categoria: "camisa", img: "https://www.gap.com.pe/media/catalog/product/7/9/796264_gp00_1.jpg" },
     { nombre: "Camisa Formal", categoria: "camisa", img: "https://sc04.alicdn.com/kf/H7d1d87b25ec94cce8cce62e52160c797h/252455369/H7d1d87b25ec94cce8cce62e52160c797h.jpg" },
     { nombre: "Falda Plisada", categoria: "falda", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyg9EVTU57naiPZDxO8j9JwPalE4NIQfKwDw&s" },
