@@ -14,7 +14,6 @@
     <!-- ====== HEADER ====== -->
     <header>
       <img src="logo.jpg" alt="Logo Ivon" class="logo" />
-      <!-- Se eliminó el <h1>Textilerías Ivon</h1> -->
       <p class="eslogan">Tu estilo, tu medida, tu esencia</p>
     </header>
 
@@ -23,6 +22,7 @@
       <a href="#diseña">Diseña</a>
       <a href="#telas">Telas</a>
       <a href="#colores">Colores</a>
+      <a href="#seleccion">Selección</a>
       <a href="#catalogo">Catálogo</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -36,11 +36,10 @@
     <section class="section" id="diseña">
       <h2>Diseña tu prenda</h2>
       <p>Elige tipo de prenda, color y medidas.</p>
-      <!-- Botón centrado para ir al formulario -->
       <a href="#formulario" class="btn">Ir al formulario</a>
     </section>
 
-    <!-- ====== SECCIÓN: TELAS (solo tipos) ====== -->
+    <!-- ====== SECCIÓN: TELAS (solo TIPOS) ====== -->
     <section class="section" id="telas">
       <h2>Nuestros Tipos de Telas</h2>
       <p>Filtra por tipo de tela:</p>
@@ -54,6 +53,23 @@
       <p>Filtra por color:</p>
       <input type="text" id="filtroColores" placeholder="Filtrar por color..." />
       <div id="listaColores" class="grid-container"></div>
+    </section>
+
+    <!-- ====== SECCIÓN: SELECCIÓN ACTUAL ====== -->
+    <section class="section" id="seleccion">
+      <h2>Selección Actual</h2>
+      <div class="seleccion-container">
+        <div class="seleccion-card" id="seleccionTela">
+          <h3>Tela seleccionada:</h3>
+          <p id="nombreTela">Ninguna tela seleccionada</p>
+          <img id="imagenTela" src="" alt="" style="display:none; max-width:200px; margin-top:1rem;" />
+        </div>
+        <div class="seleccion-card" id="seleccionColor">
+          <h3>Color seleccionado:</h3>
+          <p id="nombreColor">Ningún color seleccionado</p>
+          <div id="muestraColor" style="display:none; width:100px; height:100px; margin-top:1rem; border:1px solid #ccc;"></div>
+        </div>
+      </div>
     </section>
 
     <!-- ====== SECCIÓN: CATÁLOGO DE DISEÑOS ====== -->
