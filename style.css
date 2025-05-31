@@ -24,7 +24,6 @@ header {
   background: #efe7e0;
 }
 
-/* Solo el logo y el eslogan */
 .logo {
   max-width: 120px;
   margin-bottom: 0.5rem;
@@ -131,12 +130,19 @@ nav a:hover {
   max-width: 150px;
   transition: transform 0.3s, box-shadow 0.3s;
   padding: 1rem 0.5rem;
+  cursor: pointer;
 }
 
 .card p {
   margin: 0.5rem 0;
   font-weight: 500;
   text-transform: capitalize;
+}
+
+.card small {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #666;
 }
 
 /* Efecto hover en las tarjetas */
@@ -198,7 +204,28 @@ nav a:hover {
 }
 
 /* ===========================
-   10. Estilos ESPECÍFICOS para CATÁLOGO
+   10. Sección de SELECCIÓN ACTUAL
+=========================== */
+.seleccion-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.seleccion-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* ===========================
+   11. Estilos ESPECÍFICOS para CATÁLOGO
 =========================== */
 /* Select de categoría */
 #filtroCategoria {
@@ -220,7 +247,7 @@ nav a:hover {
 }
 
 /* ===========================
-   11. Footer / Contacto y WhatsApp
+   12. Footer / Contacto y WhatsApp
 =========================== */
 .pago {
   text-align: center;
@@ -252,7 +279,7 @@ nav a:hover {
 }
 
 /* ===========================
-   12. Animaciones (fade-in)
+   13. Animaciones (fade-in)
 =========================== */
 @keyframes fadein {
   from {
@@ -264,4 +291,3 @@ nav a:hover {
     transform: translateY(0);
   }
 }
-
