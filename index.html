@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Textilerías Ivon - Ropa a tu medida</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
+    <img src="logo.png" alt="Logotipo" class="logo" />
     <h1>Textilerías Ivon</h1>
-    <p>Tu ropa personalizada, con las telas que más te gusten</p>
+    <p class="eslogan">Tu estilo, tu diseño, tu medida</p>
   </header>
 
   <nav>
     <a href="#diseña">Diseña</a>
     <a href="#telas">Telas</a>
-    <a href="#delivery">Delivery</a>
+    <a href="#catalogo">Catálogo</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
@@ -28,24 +28,47 @@
   <section class="section" id="diseña">
     <h2>Diseña tu prenda</h2>
     <p>Escoge el tipo de ropa, las telas, el color y tus medidas.</p>
-    <a href="#contacto" class="btn">Comienza ahora</a>
+    <button class="btn" onclick="toggleFormulario()">Abrir formulario</button>
+    <div class="formulario-container" id="formulario">
+      <form>
+        <input type="text" placeholder="Nombre" required />
+        <input type="text" placeholder="Tipo de prenda" required />
+        <input type="text" placeholder="Medidas (ej. 90-60-90)" required />
+        <input type="date" placeholder="Fecha de prueba de ajuste" required />
+        <textarea placeholder="Comentarios adicionales"></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </div>
   </section>
 
- <section class="section" id="telas">
-  <h2>Nuestras Telas</h2>
-  <input type="text" id="filtroTelas" placeholder="Filtrar por nombre..." />
-  <div id="listaTelas" class="telas-container"></div>
-</section>
+  <section class="section" id="telas">
+    <h2>Nuestras Telas</h2>
+    <label for="filtroTelas">Filtrar por tipo:</label>
+    <select id="filtroTelas">
+      <option value="todas">Todas</option>
+      <option value="algodon">Algodón</option>
+      <option value="lino">Lino</option>
+      <option value="mezclilla">Mezclilla</option>
+      <option value="seda">Seda</option>
+    </select>
+    <div id="listaTelas" class="telas-container"></div>
+  </section>
 
-  <section class="section" id="delivery">
-    <h2>Servicio de Delivery</h2>
-    <p>Entregamos en toda la ciudad. Rápido y seguro, directo a tu puerta.</p>
+  <section class="section" id="catalogo">
+    <h2>Catálogo de prendas</h2>
+    <div id="catalogoContainer" class="telas-container">
+      <!-- Prendas anteriores (diseños base) -->
+    </div>
   </section>
 
   <section class="section" id="contacto">
     <h2>Contáctanos</h2>
-    <p>¿Tienes preguntas? ¿Quieres diseñar algo especial? Escríbenos por WhatsApp.</p>
+    <p>¿Tienes preguntas o un diseño especial? Escríbenos por WhatsApp o visítanos en tienda.</p>
     <a href="https://wa.me/51999999999" target="_blank" class="btn">Escríbenos</a>
+    <div class="pagos">
+      <h3>Medios de pago</h3>
+      <p>✅ Yape <br> ✅ Pago físico</p>
+    </div>
   </section>
 
   <a class="whatsapp" href="https://wa.me/51999999999" target="_blank">W</a>
@@ -53,3 +76,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
