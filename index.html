@@ -14,7 +14,7 @@
     <!-- ====== HEADER ====== -->
     <header>
       <img src="logo.jpg" alt="Logo Ivon" class="logo" />
-      <h1>Textilerías Ivon</h1>
+      <!-- Se eliminó el <h1>Textilerías Ivon</h1> -->
       <p class="eslogan">Tu estilo, tu medida, tu esencia</p>
     </header>
 
@@ -36,17 +36,15 @@
     <section class="section" id="diseña">
       <h2>Diseña tu prenda</h2>
       <p>Elige tipo de prenda, color y medidas.</p>
-      <!-- Solo aquí aparece el botón para ir al formulario -->
+      <!-- Botón centrado para ir al formulario -->
       <a href="#formulario" class="btn">Ir al formulario</a>
     </section>
 
-    <!-- ====== SECCIÓN: TELAS ====== -->
+    <!-- ====== SECCIÓN: TELAS (solo tipos) ====== -->
     <section class="section" id="telas">
-      <h2>Nuestras Telas</h2>
-      <p>Filtra por nombre o tipo de tela:</p>
-      <!-- Filtro específico para TELAS -->
-      <input type="text" id="filtroTelas" placeholder="Filtrar por nombre o tipo..." />
-      <!-- Contenedor donde se inyectarán las tarjetas de telas -->
+      <h2>Nuestros Tipos de Telas</h2>
+      <p>Filtra por tipo de tela:</p>
+      <input type="text" id="filtroTelas" placeholder="Filtrar por tipo..." />
       <div id="listaTelas" class="grid-container"></div>
     </section>
 
@@ -54,9 +52,7 @@
     <section class="section" id="colores">
       <h2>Colores Disponibles</h2>
       <p>Filtra por color:</p>
-      <!-- Filtro específico para COLORES -->
       <input type="text" id="filtroColores" placeholder="Filtrar por color..." />
-      <!-- Contenedor donde se inyectarán las tarjetas filtradas por color -->
       <div id="listaColores" class="grid-container"></div>
     </section>
 
@@ -64,7 +60,6 @@
     <section class="section" id="catalogo">
       <h2>Catálogo de Diseños Anteriores</h2>
       <p>Filtra por categoría:</p>
-      <!-- Select que filtra entre Vestidos, Camisas y Faldas -->
       <select id="filtroCategoria">
         <option value="todas">Todas</option>
         <option value="vestido">Vestidos</option>
@@ -89,7 +84,7 @@
       <div class="pago">
         <h3>Medios de pago</h3>
         <p>Aceptamos Yape y pago físico</p>
-        <img src="https://www.smartgo.pe/files/images/medio_pago/1723325249-yape12.png" alt="Yape" class="yape" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Yape_Logo.png/600px-Yape_Logo.png" alt="Yape" class="yape" />
       </div>
     </section>
   </div><!-- /.container -->
