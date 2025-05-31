@@ -9,67 +9,97 @@
 </head>
 <body>
 
-  <header>
-    <img src="logo.jpg" alt="Logo Ivon" class="logo" />
-    <h1>Textilerías Ivon</h1>
-    <p class="eslogan">Tu estilo, tu medida, tu esencia</p>
-  </header>
+  <!-- Contenedor general para centrar todo -->
+  <div class="container">
+    <!-- ====== HEADER ====== -->
+    <header>
+      <img src="logo.jpg" alt="Logo Ivon" class="logo" />
+      <h1>Textilerías Ivon</h1>
+      <p class="eslogan">Tu estilo, tu medida, tu esencia</p>
+    </header>
 
-  <nav>
-    <a href="#diseña">Diseña</a>
-    <a href="#telas">Telas</a>
-    <a href="#catalogo">Catálogo</a>
-    <a href="#formulario">Formulario</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+    <!-- ====== NAVEGACIÓN ====== -->
+    <nav>
+      <a href="#diseña">Diseña</a>
+      <a href="#telas">Telas</a>
+      <a href="#colores">Colores</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
 
-  <div class="hero">
-    Crea tu ropa única y personalizada con las mejores telas
-  </div>
-
-  <section class="section" id="diseña">
-    <h2>Diseña tu prenda</h2>
-    <p>Elige tipo de prenda, color y medidas.</p>
-    <a href="#formulario" class="btn">Ir al formulario</a>
-  </section>
-
-  <section class="section" id="telas">
-    <h2>Nuestras Telas y Colores</h2>
-    <input type="text" id="filtroColores" placeholder="Filtrar por tela o color..." />
-    <div id="listaTelas" class="telas-container"></div>
-  </section>
-
-  <section class="section" id="catalogo">
-    <h2>Catálogo de Diseños Anteriores</h2>
-    <div class="catalogo">
-      <img src="https://via.placeholder.com/200x250?text=Vestido+1" alt="Diseño 1" />
-      <img src="https://via.placeholder.com/200x250?text=Camisa+2" alt="Diseño 2" />
-      <img src="https://via.placeholder.com/200x250?text=Falda+3" alt="Diseño 3" />
+    <!-- ====== HERO ====== -->
+    <div class="hero">
+      Crea tu ropa única y personalizada con las mejores telas
     </div>
-  </section>
 
-  <section class="section" id="formulario">
-    <h2>Formulario de Diseño</h2>
-    <p>Haz clic en el botón para llenar tus datos, medidas y fecha de prueba:</p>
-    <a href="https://forms.gle/tu-formulario" target="_blank" class="btn">Llenar formulario</a>
-  </section>
+    <!-- ====== SECCIÓN: DISEÑA ====== -->
+    <section class="section" id="diseña">
+      <h2>Diseña tu prenda</h2>
+      <p>Elige tipo de prenda, color y medidas.</p>
+      <!-- Solo aquí aparece el botón para ir al formulario -->
+      <a href="#formulario" class="btn">Ir al formulario</a>
+    </section>
 
-  <section class="section" id="contacto">
-    <h2>Contáctanos</h2>
-    <p>¿Tienes preguntas o deseas coordinar tu pedido? Escríbenos por WhatsApp.</p>
-    <a href="https://wa.me/51999999999" target="_blank" class="btn">Escríbenos por WhatsApp</a>
-    <div class="pago">
-      <h3>Medios de pago</h3>
-      <p>Aceptamos Yape y pago físico</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Yape_Logo.png/600px-Yape_Logo.png" alt="Yape" class="yape" />
-    </div>
-  </section>
+    <!-- ====== SECCIÓN: TELAS ====== -->
+    <section class="section" id="telas">
+      <h2>Nuestras Telas</h2>
+      <p>Filtra por nombre o tipo de tela:</p>
+      <!-- Filtro específico para TELAS -->
+      <input type="text" id="filtroTelas" placeholder="Filtrar por nombre o tipo..." />
+      <!-- Contenedor donde se inyectarán las tarjetas de telas -->
+      <div id="listaTelas" class="grid-container"></div>
+    </section>
 
+    <!-- ====== SECCIÓN: COLORES ====== -->
+    <section class="section" id="colores">
+      <h2>Colores Disponibles</h2>
+      <p>Filtra por color:</p>
+      <!-- Filtro específico para COLORES -->
+      <input type="text" id="filtroColores" placeholder="Filtrar por color..." />
+      <!-- Contenedor donde se inyectarán las tarjetas filtradas por color -->
+      <div id="listaColores" class="grid-container"></div>
+    </section>
+
+    <!-- ====== SECCIÓN: CATÁLOGO DE DISEÑOS ====== -->
+    <section class="section" id="catalogo">
+      <h2>Catálogo de Diseños Anteriores</h2>
+      <p>Filtra por categoría:</p>
+      <!-- Select que filtra entre Vestidos, Camisas y Faldas -->
+      <select id="filtroCategoria">
+        <option value="todas">Todas</option>
+        <option value="vestido">Vestidos</option>
+        <option value="camisa">Camisas</option>
+        <option value="falda">Faldas</option>
+      </select>
+      <div id="catalogoContainer" class="grid-container"></div>
+    </section>
+
+    <!-- ====== SECCIÓN: FORMULARIO ====== -->
+    <section class="section" id="formulario">
+      <h2>Formulario de Diseño</h2>
+      <p>Completa tus datos, medidas y fecha de prueba:</p>
+      <a href="https://forms.gle/tu-formulario" target="_blank" class="btn">Llenar formulario</a>
+    </section>
+
+    <!-- ====== SECCIÓN: CONTACTO ====== -->
+    <section class="section" id="contacto">
+      <h2>Contáctanos</h2>
+      <p>¿Tienes preguntas o deseas coordinar tu pedido? Escríbenos por WhatsApp.</p>
+      <a href="https://wa.me/51999999999" target="_blank" class="btn">Escríbenos por WhatsApp</a>
+      <div class="pago">
+        <h3>Medios de pago</h3>
+        <p>Aceptamos Yape y pago físico</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Yape_Logo.png/600px-Yape_Logo.png" alt="Yape" class="yape" />
+      </div>
+    </section>
+  </div><!-- /.container -->
+
+  <!-- Botón flotante de WhatsApp -->
   <a class="whatsapp" href="https://wa.me/51999999999" target="_blank">💬</a>
 
+  <!-- Script principal -->
   <script src="script.js"></script>
 </body>
 </html>
-
 
 
