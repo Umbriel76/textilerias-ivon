@@ -2,70 +2,81 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // ================================
-  // 1. DATOS DE TELAS (completa lista)
+  // 1. DATOS DE TELAS (solo los campos requeridos)
   // ================================
   const telas = [
-    { nombre: "Algodón Rojo", tipo: "algodón", color: "rojo", img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREzysF-SGpFsCoeAtJjG5jzwzPiLS767dN8w&s' },
-    { nombre: "Lino Azul", tipo: "lino", color: "azul", img: 'https://revuelta.pe/cdn/shop/products/Lino-DMC.jpg?v=1712761380&width=1445' },
-    { nombre: "Mezclilla Negra", tipo: "mezclilla", color: "negro", img: 'https://www.hitega.cl/blog/wp-content/uploads/2021/02/telas-de-mezclilla.jpg' },
-    { nombre: "Seda Blanca", tipo: "seda", color: "blanco", img: 'https://m.media-amazon.com/images/I/714XhlWf3nL.jpg' },
-    { nombre: "Franela Verde", tipo: "franela", color: "verde", img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMzJyQnh85FsLLpfFU-TJ1N4yTlfg4GEDzOw&s' }
+    { nombre: 'Algodón', tipo: 'algodon', imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREzysF-SGpFsCoeAtJjG5jzwzPiLS767dN8w&s' },
+    { nombre: 'Lino', tipo: 'lino', imagen: 'https://revuelta.pe/cdn/shop/products/Lino-DMC.jpg?v=1712761380&width=1445' },
+    { nombre: 'Mezclilla', tipo: 'mezclilla', imagen: 'https://www.hitega.cl/blog/wp-content/uploads/2021/02/telas-de-mezclilla.jpg' },
+    { nombre: 'Seda', tipo: 'seda', imagen: 'https://m.media-amazon.com/images/I/714XhlWf3nL.jpg' },
+    { nombre: 'Franela', tipo: 'franela', imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMzJyQnh85FsLLpfFU-TJ1N4yTlfg4GEDzOw&s' }
   ];
 
   // ================================
-  // 2. RENDERIZAR SECCIÓN TELAS
+  // 2. DATOS DE COLORES (solo nombre y valor en CSS)
+  // ================================
+  const colores = [
+    { nombre: 'Rojo', valor: 'rojo' },
+    { nombre: 'Azul', valor: 'azul' },
+    { nombre: 'Negro', valor: 'negro' },
+    { nombre: 'Blanco', valor: 'blanco' },
+    { nombre: 'Verde', valor: 'verde' }
+  ];
+
+  // ================================
+  // 3. RENDERIZAR SECCIÓN TELAS (solo TIPOS)
   // ================================
   const listaTelas = document.getElementById("listaTelas");
   const filtroTelas = document.getElementById("filtroTelas");
 
-  function renderTelas(filtroTexto = "") {
+  function renderTipos(filtroTexto = "") {
     listaTelas.innerHTML = "";
 
-    // Filtrar por nombre o tipo
-    const filtradas = telas.filter(tela =>
-      tela.nombre.toLowerCase().includes(filtroTexto.toLowerCase()) ||
-      tela.tipo.toLowerCase().includes(filtroTexto.toLowerCase())
+    // Filtrar por tipo o nombre de tela
+    const filtrados = telas.filter(tela =>
+      tela.tipo.toLowerCase().includes(filtroTexto.toLowerCase()) ||
+      tela.nombre.toLowerCase().includes(filtroTexto.toLowerCase())
     );
 
-    if (filtradas.length === 0) {
-      listaTelas.innerHTML = `<p class="sin-resultados">No se encontraron telas que coincidan.</p>`;
+    if (filtrados.length === 0) {
+      listaTelas.innerHTML = `<p class="sin-resultados">No se encontraron tipos de tela que coincidan.</p>`;
       return;
     }
 
-    filtradas.forEach(tela => {
+    // Crear tarjeta por cada tipo filtrado
+    filtrados.forEach(tela => {
       const div = document.createElement("div");
       div.className = "card";
       div.innerHTML = `
-        <img src="${tela.img}" alt="${tela.nombre}" />
         <p>${tela.nombre}</p>
-        <small>Tipo: ${tela.tipo}</small>
+        <small>Tipo de tela</small>
       `;
+      // Al hacer clic, seleccionar esta tela
+      div.addEventListener("click", () => {
+        seleccionarTela(tela);
+      });
       listaTelas.appendChild(div);
     });
   }
 
   filtroTelas.addEventListener("input", () => {
-    renderTelas(filtroTelas.value);
+    renderTipos(filtroTelas.value);
   });
 
-  // Render inicial de TELAS (sin filtro)
-  renderTelas();
+  // Render inicial de TIPOS
+  renderTipos();
 
   // ================================
-  // 3. RENDERIZAR SECCIÓN COLORES
+  // 4. RENDERIZAR SECCIÓN COLORES
   // ================================
   const listaColores = document.getElementById("listaColores");
   const filtroColores = document.getElementById("filtroColores");
 
-  // Obtener todos los colores únicos del array de telas
-  const coloresUnicos = [...new Set(telas.map(t => t.color))];
-
-  function renderColores(filtroColor = "") {
+  function renderColores(filtroTexto = "") {
     listaColores.innerHTML = "";
 
-    // Filtrar la lista de colores según el texto ingresado
-    const filtrados = coloresUnicos.filter(c =>
-      c.toLowerCase().includes(filtroColor.toLowerCase())
+    const filtrados = colores.filter(c =>
+      c.nombre.toLowerCase().includes(filtroTexto.toLowerCase())
     );
 
     if (filtrados.length === 0) {
@@ -73,18 +84,19 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Por cada color, mostrar una tarjeta con un ejemplo de tela de ese color
     filtrados.forEach(color => {
-      // Buscar la primera tela que tenga ese color (para mostrar imagen de referencia)
-      const telaReferencia = telas.find(t => t.color === color);
-
       const div = document.createElement("div");
-      div.className = "card";
+      const claseExtra = color.valor === "blanco" ? "blanco" : "";
+      div.className = `card color-card ${claseExtra}`;
+      div.style.backgroundColor = color.valor;
       div.innerHTML = `
-        <img src="${telaReferencia.img}" alt="Ejemplo de color ${color}" />
-        <p>${color.charAt(0).toUpperCase() + color.slice(1)}</p>
+        <p>${color.nombre}</p>
         <small>Color</small>
       `;
+      // Al hacer clic, seleccionar este color
+      div.addEventListener("click", () => {
+        seleccionarColor(color);
+      });
       listaColores.appendChild(div);
     });
   }
@@ -93,19 +105,65 @@ document.addEventListener("DOMContentLoaded", () => {
     renderColores(filtroColores.value);
   });
 
-  // Render inicial de COLORES (sin filtro)
+  // Render inicial de COLORES
   renderColores();
 
   // ================================
-  // 4. RENDERIZAR CATÁLOGO DE DISEÑOS
+  // 5. FUNCIONES DE SELECCIÓN Y ACTUALIZAR SECCIÓN
+  // ================================
+  let seleccionActual = {
+    tela: null,
+    color: null
+  };
+
+  const nombreTelaElem = document.getElementById("nombreTela");
+  const imagenTelaElem = document.getElementById("imagenTela");
+  const nombreColorElem = document.getElementById("nombreColor");
+  const muestraColorElem = document.getElementById("muestraColor");
+
+  function seleccionarTela(tela) {
+    seleccionActual.tela = tela;
+    actualizarSeleccion();
+  }
+
+  function seleccionarColor(color) {
+    seleccionActual.color = color;
+    actualizarSeleccion();
+  }
+
+  function actualizarSeleccion() {
+    // Actualizar sección de tela
+    if (seleccionActual.tela) {
+      nombreTelaElem.textContent = seleccionActual.tela.nombre;
+      imagenTelaElem.src = seleccionActual.tela.imagen;
+      imagenTelaElem.alt = seleccionActual.tela.nombre;
+      imagenTelaElem.style.display = "block";
+    } else {
+      nombreTelaElem.textContent = "Ninguna tela seleccionada";
+      imagenTelaElem.style.display = "none";
+    }
+
+    // Actualizar sección de color
+    if (seleccionActual.color) {
+      nombreColorElem.textContent = seleccionActual.color.nombre;
+      muestraColorElem.style.backgroundColor = seleccionActual.color.valor;
+      muestraColorElem.style.display = "block";
+    } else {
+      nombreColorElem.textContent = "Ningún color seleccionado";
+      muestraColorElem.style.display = "none";
+    }
+  }
+
+  // ================================
+  // 6. RENDERIZAR CATÁLOGO DE DISEÑOS
   // ================================
   const catalogo = [
-    { nombre: "Vestido Floral", categoria: "vestido", img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz268yQSi2GNA4O_kb0PbkRFgYKMqhWjVVVA&s' },
-    { nombre: "Vestido Elegante", categoria: "vestido", img: 'https://img.kwcdn.com/product/fancy/f72115f5-8241-4ff7-8ba5-c46a050ec9ab.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp' },
-    { nombre: "Camisa Casual", categoria: "camisa", img: "https://www.gap.com.pe/media/catalog/product/7/9/796264_gp00_1.jpg" },
-    { nombre: "Camisa Formal", categoria: "camisa", img: "https://sc04.alicdn.com/kf/H7d1d87b25ec94cce8cce62e52160c797h/252455369/H7d1d87b25ec94cce8cce62e52160c797h.jpg" },
-    { nombre: "Falda Plisada", categoria: "falda", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyg9EVTU57naiPZDxO8j9JwPalE4NIQfKwDw&s" },
-    { nombre: "Falda Denim", categoria: "falda", img: "https://home.ripley.com.pe/Attachment/WOP_5/2015328374717/2015328374717_2.jpg" }
+    { nombre: "Vestido Floral", categoria: "vestido", img: "https://via.placeholder.com/200x200?text=Vestido+Floral" },
+    { nombre: "Vestido Elegante", categoria: "vestido", img: "https://via.placeholder.com/200x200?text=Vestido+Elegante" },
+    { nombre: "Camisa Casual", categoria: "camisa", img: "https://via.placeholder.com/200x200?text=Camisa+Casual" },
+    { nombre: "Camisa Formal", categoria: "camisa", img: "https://via.placeholder.com/200x200?text=Camisa+Formal" },
+    { nombre: "Falda Plisada", categoria: "falda", img: "https://via.placeholder.com/200x200?text=Falda+Plisada" },
+    { nombre: "Falda Denim", categoria: "falda", img: "https://via.placeholder.com/200x200?text=Falda+Denim" }
   ];
 
   const catalogoContainer = document.getElementById("catalogoContainer");
@@ -142,4 +200,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render inicial de Catálogo
   renderCatalogo();
 });
+
 
