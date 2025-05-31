@@ -3,10 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const lista = document.getElementById("listaTelas");
 
   const telas = {
-    algodon: "https://via.placeholder.com/300x200?text=Algodón",
-    lino: "https://via.placeholder.com/300x200?text=Lino",
-    mezclilla: "https://via.placeholder.com/300x200?text=Mezclilla",
-    seda: "https://via.placeholder.com/300x200?text=Seda",
+    algodon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREzysF-SGpFsCoeAtJjG5jzwzPiLS767dN8w&s",
+    lino: "https://revuelta.pe/cdn/shop/products/Lino-DMC.jpg?v=1712761380&width=1445",
+    mezclilla: "https://www.hitega.cl/blog/wp-content/uploads/2021/02/telas-de-mezclilla.jpg",
+    seda: "https://m.media-amazon.com/images/I/714XhlWf3nL.jpg",
+    franela:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMzJyQnh85FsLLpfFU-TJ1N4yTlfg4GEDzOw&s",
   };
 
   function mostrarTelas(tipo) {
