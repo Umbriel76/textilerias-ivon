@@ -1,31 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const filtro = document.getElementById("filtroTipo");
-  const galeria = document.getElementById("galeriaTelas");
+document.addEventListener("DOMContentLoaded", function () {
+  const telas = [
+    { nombre: "Algodón Rojo", tipo: "algodon", color: "rojo" },
+    { nombre: "Lino Azul", tipo: "lino", color: "azul" },
+    { nombre: "Mezclilla Negra", tipo: "mezclilla", color: "negro" },
+    { nombre: "Seda Blanca", tipo: "seda", color: "blanco" }
+  ];
 
-  const telas = {
-    algodon: "https://via.placeholder.com/200x200?text=Algodón",
-    lino: "https://via.placeholder.com/200x200?text=Lino",
-    mezclilla: "https://via.placeholder.com/200x200?text=Mezclilla",
-    seda: "https://via.placeholder.com/200x200?text=Seda",
-  };
+  const lista = document.getElementById("listaTelas");
+  const filtro = document.getElementById("filtroColores");
 
-  function mostrarTelas(tipo) {
-    galeria.innerHTML = "";
-    for (const key in telas) {
-      if (tipo === "todas" || tipo === key) {
-        const img = document.createElement("img");
-        img.src = telas[key];
-        img.alt = key;
-        galeria.appendChild(img);
-      }
-    }
+  function renderTelas(filtroTexto = "") {
+    lista.innerHTML = "";
+    const filtradas = telas.filter(tela =>
+      tela.nombre.toLowerCase().includes(filtroTexto.toLowerCase()) ||
+      tela.tipo.toLowerCase().includes(filtroTexto.toLowerCase()) ||
+      tela.color.toLowerCase().includes(filtroTexto.toLowerCase())
+    );
+
+    filtradas.forEach(tela => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <img src="https://via.placeholder.com/200x150?text=${encodeURIComponent(tela.nombre)}" alt="${tela.nombre}" />
+        <p>${tela.nombre}</p>
+      `;
+      lista.appendChild(div);
+    });
   }
 
-  filtro.addEventListener("change", () => {
-    mostrarTelas(filtro.value);
+  filtro.addEventListener("input", () => {
+    renderTelas(filtro.value);
   });
 
-  mostrarTelas("todas");
+  renderTelas(); // inicial
 });
-
 
