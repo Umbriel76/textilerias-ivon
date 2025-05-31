@@ -24,6 +24,7 @@ header {
   background: #efe7e0;
 }
 
+/* Solo el logo y el eslogan */
 .logo {
   max-width: 120px;
   margin-bottom: 0.5rem;
@@ -87,10 +88,11 @@ nav a:hover {
 }
 
 /* ===========================
-   6. Botones Principales
+   6. Botones Centrados
 =========================== */
 .btn {
-  display: inline-block;
+  display: block;
+  margin: 1rem auto;
   background: #5a3d84;
   color: white;
   padding: 0.75rem 1.5rem;
@@ -99,6 +101,7 @@ nav a:hover {
   font-weight: 500;
   transition: background 0.3s, transform 0.2s;
   text-align: center;
+  max-width: 200px;
 }
 
 .btn:hover {
@@ -111,7 +114,7 @@ nav a:hover {
 =========================== */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1.5rem;
   justify-items: center;
   margin-top: 1.5rem;
@@ -125,25 +128,15 @@ nav a:hover {
   overflow: hidden;
   text-align: center;
   width: 100%;
-  max-width: 200px;
+  max-width: 150px;
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
+  padding: 1rem 0.5rem;
 }
 
 .card p {
-  margin: 0.75rem 0;
+  margin: 0.5rem 0;
   font-weight: 500;
-}
-
-.card small {
-  display: block;
-  margin-bottom: 0.75rem;
-  color: #666;
+  text-transform: capitalize;
 }
 
 /* Efecto hover en las tarjetas */
@@ -153,7 +146,7 @@ nav a:hover {
 }
 
 /* ===========================
-   8. Estilos ESPECÍFICOS para TELAS
+   8. Estilos ESPECÍFICOS para TELAS (TIPOS)
 =========================== */
 /* Input de filtrado de Telas */
 #filtroTelas {
@@ -190,6 +183,18 @@ nav a:hover {
 #filtroColores:focus {
   outline: none;
   border-color: #5a3d84;
+}
+
+/* Tarjeta específica para mostrar un color sólido */
+.color-card {
+  color: white; /* Por defecto, texto en blanco */
+}
+
+/* Ajuste para el color blanco (para que el texto sea legible) */
+.color-card.blanco {
+  background-color: #ffffff !important;
+  color: #2c2c2c;
+  border: 1px solid #ccc;
 }
 
 /* ===========================
