@@ -1,107 +1,108 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
-  background: #fdf9f4;
-  color: #2e1a47;
-  scroll-behavior: smooth;
+  background: #f9f7f6;
+  color: #2c2c2c;
 }
 
 header {
   text-align: center;
-  padding: 1rem;
+  padding: 1em;
+  background: #efe7e0;
 }
 
 .logo {
-  width: 150px;
-  margin-bottom: 0.5rem;
+  max-width: 100px;
+  margin-bottom: 10px;
 }
 
 .eslogan {
   font-style: italic;
-  color: #5a3d8a;
+  color: #5a3d84;
 }
 
 nav {
-  background: #5a3d8a;
-  color: white;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  padding: 0.5rem;
+  background: #5a3d84;
 }
 
 nav a {
   color: white;
+  padding: 1em;
   text-decoration: none;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #ffdaff;
-}
-
-.hero {
-  text-align: center;
-  padding: 3rem;
-  background: #ede4f1;
-  font-size: 1.4rem;
-}
-
-.section {
-  padding: 2rem;
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-form input,
-form select,
-form button {
-  display: block;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  width: 100%;
-  max-width: 400px;
-}
-
-button {
-  background: #5a3d8a;
-  color: white;
-  border: none;
-  cursor: pointer;
   transition: background 0.3s;
 }
 
-button:hover {
-  background: #3d2a6d;
+nav a:hover {
+  background: #7a5bbd;
 }
 
-.catalogo img {
-  width: 200px;
-  margin: 10px;
+.hero {
+  background: #d9c8f7;
+  text-align: center;
+  padding: 2em;
+  font-size: 1.3em;
+}
+
+.section {
+  padding: 2em;
+  animation: fadein 1s ease-in-out;
+}
+
+.btn {
+  background: #5a3d84;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #7a5bbd;
 }
 
 .telas-container img {
-  width: 150px;
-  margin: 8px;
+  width: 180px;
+  margin: 10px;
+  border-radius: 10px;
   transition: transform 0.3s;
 }
 
 .telas-container img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+.catalogo img {
+  width: 180px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.pago {
+  margin-top: 2em;
+}
+
+.yape {
+  width: 100px;
+  margin-top: 10px;
 }
 
 .whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  font-size: 2em;
   background: #25d366;
   color: white;
-  font-size: 1.5rem;
-  padding: 0.8rem;
+  padding: 10px 15px;
   border-radius: 50%;
   text-decoration: none;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes fadeIn {
+@keyframes fadein {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
