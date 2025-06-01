@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ID de tu formulario (ajusta esta URL al ID real de tu Google Form)
     // Para insertar un Formulario de Google en modo “embed”, la URL tiene este formato:
     // https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true
-    const formularioEmbedUrl = "https://docs.google.com/forms/d/e/tu-form-id/viewform?embedded=true";
+    const formularioEmbedUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeRSQ8hzz5m7AFwBZJTwhgvjynxbJ-6bqfhJYzG5BZXFQ67vQ/viewform?usp=dialog";
 
     // Calculamos fecha de 5 días hábiles desde hoy
     const hoy = new Date();
