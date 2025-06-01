@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,12 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
+<body>
   <!-- Contenedor general para centrar todo -->
   <div class="container">
     <!-- ====== HEADER ====== -->
     <header>
+      <!-- Aumentamos max-width en style.css para que sea más grande. -->
       <img src="logo.jpg" alt="Logo Ivon" class="logo" />
       <p class="eslogan">Tu estilo, tu medida, tu esencia</p>
     </header>
@@ -67,7 +69,8 @@
         <div class="seleccion-card" id="seleccionColor">
           <h3>Color seleccionado:</h3>
           <p id="nombreColor">Ningún color seleccionado</p>
-          <div id="muestraColor" style="display:none; width:100px; height:100px; margin-top:1rem; border:1px solid #ccc;"></div>
+          <!-- Aquí ahora mostramos imagen en lugar de div con background-color -->
+          <img id="imagenColor" src="" alt="" style="display:none; max-width:100px; margin-top:1rem; border-radius:8px;" />
         </div>
       </div>
     </section>
@@ -89,7 +92,13 @@
     <section class="section" id="formulario">
       <h2>Formulario de Diseño</h2>
       <p>Completa tus datos, medidas y fecha de prueba:</p>
-      <a href="https://forms.gle/tu-formulario" target="_blank" class="btn">Llenar formulario</a>
+      <!--
+        Reemplazamos el <a> por un <button> que mostrará, en la misma página, un iframe con el Formulario de Google
+        y justo debajo el mensaje de “Pedido listo” con la fecha de 5 días hábiles.
+      -->
+      <button id="openFormBtn" class="btn">Llenar formulario</button>
+      <!-- Contenedor donde cargaremos dinámicamente el iframe + mensaje -->
+      <div id="formContainer" style="display: none; margin-top: 1rem;"></div>
     </section>
 
     <!-- ====== SECCIÓN: CONTACTO ====== -->
@@ -103,7 +112,8 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Yape_Logo.png/600px-Yape_Logo.png" alt="Yape" class="yape" />
       </div>
     </section>
-  </div><!-- /.container -->
+  </div>
+  <!-- /.container -->
 
   <!-- Botón flotante de WhatsApp -->
   <a class="whatsapp" href="https://wa.me/51999999999" target="_blank">💬</a>
@@ -111,6 +121,7 @@
   <!-- Script principal -->
   <script src="script.js"></script>
 </body>
+
 </html>
 
 
