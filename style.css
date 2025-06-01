@@ -24,8 +24,11 @@ header {
   background: #efe7e0;
 }
 
+/* Logo más grande; mantiene proporción automática */
 .logo {
-  max-width: 120px;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
   margin-bottom: 0.5rem;
 }
 
@@ -101,6 +104,8 @@ nav a:hover {
   transition: background 0.3s, transform 0.2s;
   text-align: center;
   max-width: 200px;
+  border: none; /* Para button */
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -133,16 +138,14 @@ nav a:hover {
   cursor: pointer;
 }
 
-.card p {
-  margin: 0.5rem 0;
-  font-weight: 500;
-  text-transform: capitalize;
-}
-
-.card small {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #666;
+/* ===========================
+   7.1. Corrección: imágenes en tarjeta sin distorsión
+=========================== */
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 /* Efecto hover en las tarjetas */
@@ -191,18 +194,6 @@ nav a:hover {
   border-color: #5a3d84;
 }
 
-/* Tarjeta específica para mostrar un color sólido */
-.color-card {
-  color: white; /* Por defecto, texto en blanco */
-}
-
-/* Ajuste para el color blanco (para que el texto sea legible) */
-.color-card.blanco {
-  background-color: #ffffff !important;
-  color: #2c2c2c;
-  border: 1px solid #ccc;
-}
-
 /* ===========================
    10. Sección de SELECCIÓN ACTUAL
 =========================== */
@@ -222,6 +213,18 @@ nav a:hover {
   text-align: center;
   width: 100%;
   max-width: 300px;
+}
+
+/* ===========================
+   10.1. Corrección: imágenes de selección sin distorsión
+=========================== */
+#imagenTela,
+#imagenColor {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 1rem;
 }
 
 /* ===========================
@@ -291,3 +294,4 @@ nav a:hover {
     transform: translateY(0);
   }
 }
+
