@@ -175,23 +175,29 @@ nav a:hover {
 }
 
 /* ===========================
-   9. Estilos ESPECÍFICOS para COLORES
+   9. Estilos ESPECÍFICOS para PALETA DE COLORES
 =========================== */
-/* Input de filtrado de Colores */
-#filtroColores {
-  display: block;
-  margin: 0 auto 1rem auto;
-  max-width: 300px;
-  width: 100%;
-  padding: 0.5rem 1rem;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+.palette-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
-#filtroColores:focus {
-  outline: none;
-  border-color: #5a3d84;
+/* Cada swatch pequeño (50×50 px, esquinas redondeadas) */
+.color-swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 /* ===========================
@@ -218,13 +224,21 @@ nav a:hover {
 /* ===========================
    10.1. Corrección: imágenes de selección sin distorsión
 =========================== */
-#imagenTela,
-#imagenColor {
+#imagenTela {
   max-width: 100%;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
   margin-top: 1rem;
+}
+
+/* Recuadro grande de color en Selección Actual */
+#muestraColorSeleccionado {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  margin: 1rem auto 0 auto;
 }
 
 /* ===========================
@@ -294,4 +308,3 @@ nav a:hover {
     transform: translateY(0);
   }
 }
-
