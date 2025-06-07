@@ -14,7 +14,6 @@
   <div class="container">
     <!-- ====== HEADER ====== -->
     <header>
-      <!-- Aumentamos max-width en style.css para que sea más grande. -->
       <img src="logo.jpg" alt="Logo Ivon" class="logo" />
       <p class="eslogan">Tu estilo, tu medida, tu esencia</p>
     </header>
@@ -54,7 +53,7 @@
       <h2>Colores Disponibles</h2>
       <p>Filtra por color:</p>
       <input type="text" id="filtroColores" placeholder="Filtrar por color..." />
-      <div id="listaColores" class="grid-container"></div>
+      <div id="listaColores" class="palette-container"></div>
     </section>
 
     <!-- ====== SECCIÓN: SELECCIÓN ACTUAL ====== -->
@@ -69,8 +68,8 @@
         <div class="seleccion-card" id="seleccionColor">
           <h3>Color seleccionado:</h3>
           <p id="nombreColor">Ningún color seleccionado</p>
-          <!-- Aquí ahora mostramos imagen en lugar de div con background-color -->
-          <img id="imagenColor" src="" alt="" style="display:none; max-width:100px; margin-top:1rem; border-radius:8px;" />
+          <!-- Recuadro grande que mostrará el color -->
+          <div id="muestraColorSeleccionado" style="display:none;"></div>
         </div>
       </div>
     </section>
@@ -84,6 +83,10 @@
         <option value="vestido">Vestidos</option>
         <option value="camisa">Camisas</option>
         <option value="falda">Faldas</option>
+        <option value="abrigo">Abrigos</option>
+        <option value="saco">Sacos</option>
+        <option value="blazer">Blazers</option>
+        <option value="terno">Ternos</option>
       </select>
       <div id="catalogoContainer" class="grid-container"></div>
     </section>
@@ -92,12 +95,7 @@
     <section class="section" id="formulario">
       <h2>Formulario de Diseño</h2>
       <p>Completa tus datos, medidas y fecha de prueba:</p>
-      <!--
-        Reemplazamos el <a> por un <button> que mostrará, en la misma página, un iframe con el Formulario de Google
-        y justo debajo el mensaje de “Pedido listo” con la fecha de 5 días hábiles.
-      -->
       <button id="openFormBtn" class="btn">Llenar formulario</button>
-      <!-- Contenedor donde cargaremos dinámicamente el iframe + mensaje -->
       <div id="formContainer" style="display: none; margin-top: 1rem;"></div>
     </section>
 
@@ -123,5 +121,4 @@
 </body>
 
 </html>
-
 
