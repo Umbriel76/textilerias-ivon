@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formContainer.style.display = "block";
 
     // Reemplaza TU_FORM_ID por el ID real de tu Google Form
-    const formularioEmbedUrl = "https://docs.google.com/forms/d/e/TU_FORM_ID/viewform?embedded=true";
+    const formularioEmbedUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeRSQ8hzz5m7AFwBZJTwhgvjynxbJ-6bqfhJYzG5BZXFQ67vQ/viewform?usp=dialog";
     const hoy = new Date();
     const fechaAProbar = sumarDiasHabiles(hoy, 5);
     const fechaFormateada = formatearFecha(fechaAProbar);
