@@ -224,25 +224,25 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       nombre: "Abrigo Clásico",
       categoria: "abrigo",
-      img: "https://i.imgur.com/px2Y1nK.jpg",
+      img: "https://rimage.ripley.com.pe/home.ripley/Attachment/MKP/2658/PMP00003052740/full_image-1.jpeg",
       precio: 250
     },
     {
       nombre: "Saco Deportivo",
       categoria: "saco",
-      img: "https://i.imgur.com/6G1XkYV.jpg",
+      img: "https://oechsle.vteximg.com.br/arquivos/ids/20487278-800-800/2810672.jpg?v=638749389586430000",
       precio: 180
     },
     {
       nombre: "Blazer Elegante",
       categoria: "blazer",
-      img: "https://i.imgur.com/Z5C9QxA.jpg",
+      img: "https://rimage.ripley.com.pe/home.ripley/Attachment/MKP/3467/PMP20000581150/full_image-2.jpeg",
       precio: 200
     },
     {
       nombre: "Terno Clásico",
       categoria: "terno",
-      img: "https://i.imgur.com/3dVxX7W.jpg",
+      img: "https://d1fufvy4xao6k9.cloudfront.net/images/blog/posts/2024/03/screenshot_4.jpg",
       precio: 300
     }
   ];
