@@ -283,43 +283,39 @@ document.addEventListener("DOMContentLoaded", () => {
   // ================================
   // 7. FORMULARIO EMBEBIDO + “PEDIDO LISTO” + FECHA 5 DÍAS HÁBILES
   // ================================
+ // ————————————— FORMULARIO + GARANTÍA —————————————
   const openFormBtn = document.getElementById("openFormBtn");
   const formContainer = document.getElementById("formContainer");
 
-  function sumarDiasHabiles(fechaInicial, diasHabiles) {
-    const resultado = new Date(fechaInicial);
-    let contador = 0;
-    while (contador < diasHabiles) {
-      resultado.setDate(resultado.getDate() + 1);
-      if (resultado.getDay() !== 0 && resultado.getDay() !== 6) {
-        contador++;
-      }
+  function sumarDiasHabiles(fecha, dias) {
+    let cont = 0;
+    const res = new Date(fecha);
+    while (cont < dias) {
+      res.setDate(res.getDate() + 1);
+      if (res.getDay() !== 0 && res.getDay() !== 6) cont++;
     }
-    return resultado;
+    return res;
   }
-
   function formatearFecha(fecha) {
-    const dia = String(fecha.getDate()).padStart(2, '0');
-    const mes = String(fecha.getMonth() + 1).padStart(2, '0');
-    const anio = fecha.getFullYear();
-    return `${dia}/${mes}/${anio}`;
+    return fecha.toLocaleDateString('es-PE', { year:'numeric', month:'long', day:'numeric' });
   }
 
   openFormBtn.addEventListener("click", () => {
     openFormBtn.style.display = "none";
     formContainer.style.display = "block";
 
-    // Reemplaza TU_FORM_ID por el ID real de tu Google Form
-    const formularioEmbedUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeRSQ8hzz5m7AFwBZJTwhgvjynxbJ-6bqfhJYzG5BZXFQ67vQ/viewform?usp=dialog";
+    const urlForm = "https://docs.google.com/forms/d/e/1FAIpQLSeRSQ8hzz5m7AFwBZJTwhgvjynxbJ-6bqfhJYzG5BZXFQ67vQ/viewform?usp=dialog";
     const hoy = new Date();
-    const fechaAProbar = sumarDiasHabiles(hoy, 5);
-    const fechaFormateada = formatearFecha(fechaAProbar);
+    const fecha = sumarDiasHabiles(hoy, 5);
+    const fechaFmt = formatearFecha(fecha);
 
     formContainer.innerHTML = `
-      <iframe src="${formularioEmbedUrl}" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-      <p id="pedidoMensaje" style="text-align:center; margin-top:1rem; font-weight:bold; color:#5a3d84;">
-        Pedido listo. Podrás probar tu diseño a partir del día <strong>${fechaFormateada}</strong>.
+      <iframe src="${urlForm}" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+      <p style="text-align:center; margin-top:1rem; font-weight:bold; color:#5a3d84;">
+        Pedido listo. Podrás probar tu diseño a partir del día <strong>${fechaFmt}</strong>.<br>
+        <small>Además, tu pedido cuenta con <strong>garantía de un mes</strong>.</small>
       </p>
     `;
   });
+
 });
