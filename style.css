@@ -1,6 +1,7 @@
-/* ===========================
-   1. Tipografía y Reset
-=========================== */
+/* style.css */
+/* ==========================
+   Tipografía y Reset
+========================== */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -8,60 +9,49 @@ body {
   color: #2c2c2c;
 }
 
-/* Contenedor general: centra todo el contenido */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
-/* ===========================
-   2. Header y Logo
-=========================== */
+/* ===== HEADER y LOGO ===== */
 header {
   text-align: center;
   padding: 1.5em 0;
   background: #efe7e0;
 }
-
-/* Logo más grande; mantiene proporción automática */
 .logo {
-  max-width: 200px;
+  max-width: 300px; /* aumentado */
   width: 100%;
   height: auto;
   margin-bottom: 0.5rem;
 }
-
 .eslogan {
   font-style: italic;
   color: #5a3d84;
   margin: 0;
 }
 
-/* ===========================
-   3. Menú de Navegación
-=========================== */
+/* ===== NAVEGACIÓN ===== */
 nav {
   display: flex;
   justify-content: center;
   background: #5a3d84;
+  flex-wrap: wrap;
 }
-
 nav a {
   color: white;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   text-decoration: none;
   font-weight: 500;
   transition: background 0.3s;
 }
-
 nav a:hover {
   background: #7a5bbd;
 }
 
-/* ===========================
-   4. Hero Section
-=========================== */
+/* ===== HERO ===== */
 .hero {
   background: #d9c8f7;
   text-align: center;
@@ -70,241 +60,191 @@ nav a:hover {
   animation: fadein 1s ease-in-out;
 }
 
-/* ===========================
-   5. Estilos Comunes para SECCIONES
-=========================== */
+/* ===== SECCIONES ===== */
 .section {
-  padding: 3em 1rem;
+  padding: 2em 1rem;
   animation: fadein 0.8s ease-in-out;
 }
-
 .section h2 {
   text-align: center;
   margin-bottom: 1rem;
   color: #5a3d84;
 }
-
 .section p {
   text-align: center;
   margin-bottom: 1rem;
 }
 
-/* ===========================
-   6. Botones Centrados
-=========================== */
+/* ===== BOTONES ===== */
 .btn {
   display: block;
   margin: 1rem auto;
   background: #5a3d84;
   color: white;
   padding: 0.75rem 1.5rem;
-  text-decoration: none;
+  border: none;
   border-radius: 8px;
   font-weight: 500;
+  cursor: pointer;
   transition: background 0.3s, transform 0.2s;
   text-align: center;
   max-width: 200px;
-  border: none; /* Para button */
-  cursor: pointer;
 }
-
 .btn:hover {
   background: #7a5bbd;
   transform: translateY(-2px);
 }
 
-/* ===========================
-   7. Grid para Tarjetas
-=========================== */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
-  margin-top: 1.5rem;
+/* Botón pequeño */
+.btn-small {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
 }
 
-/* Tarjetas (cards) */
+/* ===== GRID & CARDS ===== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
 .card {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   text-align: center;
-  width: 100%;
-  max-width: 150px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  padding: 1rem 0.5rem;
+  transition: transform 0.3s;
+  padding: 1rem;
   cursor: pointer;
 }
-
-/* ===========================
-   7.1. Corrección: imágenes en tarjeta sin distorsión
-=========================== */
 .card img {
   width: 100%;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
 }
-
-/* Efecto hover en las tarjetas */
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* ===========================
-   8. Estilos ESPECÍFICOS para TELAS (TIPOS)
-=========================== */
-/* Input de filtrado de Telas */
+/* ===== TELAS ===== */
 #filtroTelas {
   display: block;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 1rem;
+  padding: 0.5rem;
   max-width: 300px;
-  width: 100%;
-  padding: 0.5rem 1rem;
   border: 2px solid #ccc;
   border-radius: 8px;
-  font-size: 1rem;
 }
-
 #filtroTelas:focus {
   outline: none;
   border-color: #5a3d84;
 }
 
-/* ===========================
-   9. Estilos ESPECÍFICOS para PALETA DE COLORES
-=========================== */
+/* ===== COLORES ===== */
 .palette-container {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
-  margin-top: 1rem;
 }
-
-/* Cada swatch pequeño (50×50 px, esquinas redondeadas) */
 .color-swatch {
   width: 50px;
   height: 50px;
   border-radius: 4px;
   cursor: pointer;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform 0.15s;
 }
-
 .color-swatch:hover {
   transform: scale(1.1);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* ===========================
-   10. Sección de SELECCIÓN ACTUAL
-=========================== */
+/* ===== SELECCIÓN ACTUAL ===== */
 .seleccion-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin-top: 1rem;
 }
-
 .seleccion-card {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 1rem;
   text-align: center;
   width: 100%;
   max-width: 300px;
 }
-
-/* ===========================
-   10.1. Corrección: imágenes de selección sin distorsión
-=========================== */
-#imagenTela {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
-/* Recuadro grande de color en Selección Actual */
 #muestraColorSeleccionado {
   width: 120px;
   height: 120px;
   border-radius: 8px;
   border: 2px solid #ccc;
-  margin: 1rem auto 0 auto;
+  margin: 1rem auto 0;
 }
 
-/* ===========================
-   11. Estilos ESPECÍFICOS para CATÁLOGO
-=========================== */
-/* Select de categoría */
+/* ===== CATÁLOGO ===== */
 #filtroCategoria {
   display: block;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 1rem;
+  padding: 0.5rem;
   max-width: 200px;
-  width: 100%;
-  padding: 0.5rem 1rem;
   border: 2px solid #ccc;
   border-radius: 8px;
-  font-size: 1rem;
-  background: white;
-  color: #2c2c2c;
 }
-
 #filtroCategoria:focus {
   outline: none;
   border-color: #5a3d84;
 }
 
-/* ===========================
-   12. Footer / Contacto y WhatsApp
-=========================== */
+/* ===== AFILIACIÓN ===== */
+.afiliacion .btn {
+  background: #e07a5f;
+}
+.afiliacion .btn:hover {
+  background: #cf6b53;
+}
+
+/* ===== REDES SOCIALES ===== */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.social-icons a {
+  border: 2px solid #5a3d84;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.social-icons a:hover {
+  background: #5a3d84;
+  color: white;
+}
+
+/* ===== PAGO y WhatsApp ===== */
 .pago {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
-
 .yape {
-  width: 100px;
+  max-width: 120px;
   margin-top: 0.5rem;
 }
-
-/* Botón flotante de WhatsApp */
 .whatsapp {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 2.2rem;
-  background: #25d366;
-  color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 50%;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 2rem;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s;
 }
 
-.whatsapp:hover {
-  transform: translateY(-3px);
-}
-
-/* ===========================
-   13. Animaciones (fade-in)
-=========================== */
+/* ===== ANIMACIONES ===== */
 @keyframes fadein {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
