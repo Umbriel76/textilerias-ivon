@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,8 +11,8 @@
 </head>
 
 <body>
-  <!-- Contenedor general para centrar todo -->
   <div class="container">
+
     <!-- ====== HEADER ====== -->
     <header>
       <img src="logo.jpg" alt="Logo Ivon" class="logo" />
@@ -25,6 +26,8 @@
       <a href="#colores">Colores</a>
       <a href="#seleccion">Selección</a>
       <a href="#catalogo">Catálogo</a>
+      <a href="#afiliacion">Afíliate</a>
+      <a href="#redes-sociales">Redes</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
@@ -40,7 +43,7 @@
       <a href="#formulario" class="btn">Ir al formulario</a>
     </section>
 
-    <!-- ====== SECCIÓN: TELAS (solo TIPOS) ====== -->
+    <!-- ====== SECCIÓN: TELAS ====== -->
     <section class="section" id="telas">
       <h2>Nuestros Tipos de Telas</h2>
       <p>Filtra por tipo de tela:</p>
@@ -60,21 +63,20 @@
     <section class="section" id="seleccion">
       <h2>Selección Actual</h2>
       <div class="seleccion-container">
-        <div class="seleccion-card" id="seleccionTela">
+        <div class="seleccion-card">
           <h3>Tela seleccionada:</h3>
           <p id="nombreTela">Ninguna tela seleccionada</p>
-          <img id="imagenTela" src="" alt="" style="display:none; max-width:200px; margin-top:1rem;" />
+          <img id="imagenTela" src="" alt="" style="display:none;" />
         </div>
-        <div class="seleccion-card" id="seleccionColor">
+        <div class="seleccion-card">
           <h3>Color seleccionado:</h3>
           <p id="nombreColor">Ningún color seleccionado</p>
-          <!-- Recuadro grande que mostrará el color -->
           <div id="muestraColorSeleccionado" style="display:none;"></div>
         </div>
       </div>
     </section>
 
-    <!-- ====== SECCIÓN: CATÁLOGO DE DISEÑOS ====== -->
+    <!-- ====== SECCIÓN: CATÁLOGO ====== -->
     <section class="section" id="catalogo">
       <h2>Catálogo de Diseños Anteriores</h2>
       <p>Filtra por categoría:</p>
@@ -91,12 +93,31 @@
       <div id="catalogoContainer" class="grid-container"></div>
     </section>
 
+    <!-- ====== SECCIÓN: AFILIACIÓN ====== -->
+    <section class="section afiliacion" id="afiliacion">
+      <h2>Club de Afiliados</h2>
+      <button class="btn">¡Afíliate ahora!</button>
+      <p>Beneficios exclusivos: 15% de descuento, diseños únicos y acceso al <strong>Club de Mujeres</strong> a través de nuestro canal de WhatsApp.</p>
+      <a href="https://wa.me/51901766906?text=Club%20de%20Mujeres" target="_blank" class="btn btn-small">
+        WhatsApp Club de Mujeres
+      </a>
+    </section>
+
+    <!-- ====== SECCIÓN: REDES SOCIALES ====== -->
+    <section class="section redes-sociales" id="redes-sociales">
+      <h2>Síguenos en Redes</h2>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1W9WRmzuo8/" target="_blank">Facebook</a>
+        <a href="https://www.tiktok.com/@confecciones_ivon?_t=ZM-8xLCoxJqpIk&_r=1" target="_blank">TikTok</a>
+      </div>
+    </section>
+
     <!-- ====== SECCIÓN: FORMULARIO ====== -->
     <section class="section" id="formulario">
       <h2>Formulario de Diseño</h2>
       <p>Completa tus datos, medidas y fecha de prueba:</p>
       <button id="openFormBtn" class="btn">Llenar formulario</button>
-      <div id="formContainer" style="display: none; margin-top: 1rem;"></div>
+      <div id="formContainer" style="display: none; margin-top:1rem;"></div>
     </section>
 
     <!-- ====== SECCIÓN: CONTACTO ====== -->
@@ -110,13 +131,11 @@
         <img src="https://marketing-peru.beglobal.biz/wp-content/uploads/2024/06/1-yape-logo-transparencia-2.png" alt="Yape" class="yape" />
       </div>
     </section>
-  </div>
-  <!-- /.container -->
 
-  <!-- Botón flotante de WhatsApp -->
+  </div>
+  <!-- Botón flotante WhatsApp -->
   <a class="whatsapp" href="https://wa.me/51901766906" target="_blank">💬</a>
 
-  <!-- Script principal -->
   <script src="script.js"></script>
 </body>
 
