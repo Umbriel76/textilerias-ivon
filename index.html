@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -28,6 +27,7 @@
       <a href="#catalogo">Catálogo</a>
       <a href="#afiliacion">Afíliate</a>
       <a href="#redes-sociales">Redes</a>
+      <a href="#formulario">Formulario</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
@@ -47,7 +47,7 @@
     <section class="section" id="telas">
       <h2>Nuestros Tipos de Telas</h2>
       <p>Filtra por tipo de tela:</p>
-      <input type="text" id="filtroTelas" placeholder="Filtrar por tipo..." />
+      <input type="text" id="filtroTelas" placeholder="Filtrar por tipo." />
       <div id="listaTelas" class="grid-container"></div>
     </section>
 
@@ -55,7 +55,7 @@
     <section class="section" id="colores">
       <h2>Colores Disponibles</h2>
       <p>Filtra por color:</p>
-      <input type="text" id="filtroColores" placeholder="Filtrar por color..." />
+      <input type="text" id="filtroColores" placeholder="Filtrar por color." />
       <div id="listaColores" class="palette-container"></div>
     </section>
 
@@ -96,8 +96,8 @@
     <!-- ====== SECCIÓN: AFILIACIÓN ====== -->
     <section class="section afiliacion" id="afiliacion">
       <h2>Club de Afiliados</h2>
-      <button class="btn">¡Afíliate ahora!</button>
-      <p>Beneficios exclusivos: 15% de descuento, diseños únicos y acceso al <strong>Club de Mujeres</strong> a través de nuestro canal de WhatsApp.</p>
+      <button id="affiliateBtn" class="btn">¡Afíliate ahora!</button>
+      <p>Beneficios exclusivos: 15% de descuento, diseños únicos y acceso al <strong>Club de Mujeres</strong>.</p>
       <a href="https://wa.me/51901766906?text=Club%20de%20Mujeres" target="_blank" class="btn btn-small">
         WhatsApp Club de Mujeres
       </a>
@@ -106,9 +106,15 @@
     <!-- ====== SECCIÓN: REDES SOCIALES ====== -->
     <section class="section redes-sociales" id="redes-sociales">
       <h2>Síguenos en Redes</h2>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/share/1W9WRmzuo8/" target="_blank">Facebook</a>
-        <a href="https://www.tiktok.com/@confecciones_ivon?_t=ZM-8xLCoxJqpIk&_r=1" target="_blank">TikTok</a>
+      <div class="social-columns">
+        <div class="social-column">
+          <h3>Facebook</h3>
+          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTuPaginaFacebook&tabs=timeline&width=300&height=200" width="300" height="200" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        </div>
+        <div class="social-column">
+          <h3>TikTok</h3>
+          <iframe src="https://www.tiktok.com/embed/v2/share/video/@TuUsuarioTikTok/VIDEO_ID" width="300" height="200" frameborder="0" allow="encrypted-media"></iframe>
+        </div>
       </div>
     </section>
 
@@ -136,10 +142,32 @@
   <!-- Botón flotante WhatsApp -->
   <a class="whatsapp" href="https://wa.me/51901766906" target="_blank">💬</a>
 
+  <!-- Modal de Afiliación -->
+  <div id="affiliateModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Afíliate al Club</h3>
+      <img src="yape_qr.png" alt="QR Yape" class="qr-code" />
+      <form id="affiliateForm">
+        <input type="text" id="firstName" placeholder="Nombre" required />
+        <input type="text" id="lastName" placeholder="Apellido" required />
+        <button type="submit" class="btn">Confirmar</button>
+      </form>
+      <div id="affiliateThanks" class="thankyou" style="display:none;">
+        <h4>¡Gracias por afiliarte!</h4>
+        <p>Tienes los siguientes beneficios:</p>
+        <ul>
+          <li>15% de descuento</li>
+          <li>Accederás a estilos únicos</li>
+          <li>Puedes crear tus propios diseños desde 0</li>
+          <li>Extensión de garantía de 1 mes a 1 año</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
-
-</html>
 
 </html>
 
