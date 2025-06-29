@@ -1,4 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
+ 
+  // ==== Club de Afiliados: Modal ====
+  const affiliateBtn = document.getElementById("affiliateBtn");
+  const modal       = document.getElementById("affiliateModal");
+  const closeBtn    = modal.querySelector(".close");
+  const form        = document.getElementById("affiliateForm");
+  const thanksDiv   = document.getElementById("affiliateThanks");
+
+  // Abrir modal
+  affiliateBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+  // Cerrar modal
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    form.style.display = "block";
+    thanksDiv.style.display = "none";
+    form.reset();
+  });
+  // Al hacer clic fuera del contenido
+  window.addEventListener("click", e => {
+    if (e.target === modal) {
+      closeBtn.click();
+    }
+  });
+
+  // Manejar envío del formulario
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    form.style.display = "none";
+    thanksDiv.style.display = "block";
+  });
+
+
   // ================================
   // 1. DATOS DE TELAS (con precio aproximado por metro)
   // ================================
