@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,13 +13,13 @@
 <body>
   <div class="container">
 
-    <!-- HEADER -->
+    <!-- ====== HEADER ====== -->
     <header>
       <img src="logo.jpg" alt="Logo Ivon" class="logo" />
       <p class="eslogan">Tu estilo, tu medida, tu esencia</p>
     </header>
 
-    <!-- NAVEGACIÓN -->
+    <!-- ====== NAVEGACIÓN ====== -->
     <nav>
       <a href="#diseña">Diseña</a>
       <a href="#telas">Telas</a>
@@ -30,73 +31,115 @@
       <a href="#contacto">Contacto</a>
     </nav>
 
-    <!-- HERO -->
+    <!-- ====== HERO ====== -->
     <div class="hero">
       Crea tu ropa única y personalizada con las mejores telas
     </div>
 
-    <!-- ... Tu contenido existente ... -->
+    <!-- ====== SECCIÓN: DISEÑA ====== -->
+    <section class="section" id="diseña">
+      <h2>Diseña tu prenda</h2>
+      <p>Elige tipo de prenda, color y medidas.</p>
+      <a href="#formulario" class="btn">Ir al formulario</a>
+    </section>
 
-    <!-- SECCIÓN: AFILIACIÓN -->
+    <!-- ====== SECCIÓN: TELAS ====== -->
+    <section class="section" id="telas">
+      <h2>Nuestros Tipos de Telas</h2>
+      <p>Filtra por tipo de tela:</p>
+      <input type="text" id="filtroTelas" placeholder="Filtrar por tipo..." />
+      <div id="listaTelas" class="grid-container"></div>
+    </section>
+
+    <!-- ====== SECCIÓN: COLORES ====== -->
+    <section class="section" id="colores">
+      <h2>Colores Disponibles</h2>
+      <p>Filtra por color:</p>
+      <input type="text" id="filtroColores" placeholder="Filtrar por color..." />
+      <div id="listaColores" class="palette-container"></div>
+    </section>
+
+    <!-- ====== SECCIÓN: SELECCIÓN ACTUAL ====== -->
+    <section class="section" id="seleccion">
+      <h2>Selección Actual</h2>
+      <div class="seleccion-container">
+        <div class="seleccion-card">
+          <h3>Tela seleccionada:</h3>
+          <p id="nombreTela">Ninguna tela seleccionada</p>
+          <img id="imagenTela" src="" alt="" style="display:none;" />
+        </div>
+        <div class="seleccion-card">
+          <h3>Color seleccionado:</h3>
+          <p id="nombreColor">Ningún color seleccionado</p>
+          <div id="muestraColorSeleccionado" style="display:none;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SECCIÓN: CATÁLOGO ====== -->
+    <section class="section" id="catalogo">
+      <h2>Catálogo de Diseños Anteriores</h2>
+      <p>Filtra por categoría:</p>
+      <select id="filtroCategoria">
+        <option value="todas">Todas</option>
+        <option value="vestido">Vestidos</option>
+        <option value="camisa">Camisas</option>
+        <option value="falda">Faldas</option>
+        <option value="abrigo">Abrigos</option>
+        <option value="saco">Sacos</option>
+        <option value="blazer">Blazers</option>
+        <option value="terno">Ternos</option>
+      </select>
+      <div id="catalogoContainer" class="grid-container"></div>
+    </section>
+
+    <!-- ====== SECCIÓN: AFILIACIÓN ====== -->
     <section class="section afiliacion" id="afiliacion">
       <h2>Club de Afiliados</h2>
-      <button id="affiliateBtn" class="btn">¡Afíliate ahora!</button>
-      <p>Beneficios exclusivos: 15% de descuento, diseños únicos y más.</p>
+      <button class="btn">¡Afíliate ahora!</button>
+      <p>Beneficios exclusivos: 15% de descuento, diseños únicos y acceso al <strong>Club de Mujeres</strong> a través de nuestro canal de WhatsApp.</p>
+      <a href="https://wa.me/51901766906?text=Club%20de%20Mujeres" target="_blank" class="btn btn-small">
+        WhatsApp Club de Mujeres
+      </a>
     </section>
 
-    <!-- Modal de Afiliación -->
-    <div id="affiliateModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3>Afíliate al Club</h3>
-        <img src="yape_qr.png" alt="QR Yape" class="qr-code" />
-        <form id="affiliateForm">
-          <input type="text" id="firstName" placeholder="Nombre" required />
-          <input type="text" id="lastName" placeholder="Apellido" required />
-          <button type="submit" class="btn">Confirmar</button>
-        </form>
-        <div id="affiliateThanks" class="thankyou" style="display:none;">
-          <h4>¡Gracias por afiliarte!</h4>
-          <p>Tienes los siguientes beneficios:</p>
-          <ul>
-            <li>15% de descuento</li>
-            <li>Accederás a estilos únicos</li>
-            <li>Puedes crear tus propios diseños desde 0</li>
-            <li>Extensión de garantía de 1 mes a 1 año</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECCIÓN: REDES SOCIALES -->
+    <!-- ====== SECCIÓN: REDES SOCIALES ====== -->
     <section class="section redes-sociales" id="redes-sociales">
       <h2>Síguenos en Redes</h2>
-      <div class="social-columns">
-        <div class="social-column">
-          <h3>Facebook</h3>
-          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTuPaginaFacebook&tabs=timeline&width=300&height=200" width="300" height="200" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-        </div>
-        <div class="social-column">
-          <h3>TikTok</h3>
-          <iframe src="https://www.tiktok.com/embed/v2/share/video/@TuUsuarioTikTok/VIDEO_ID" width="300" height="200" frameborder="0" allow="encrypted-media"></iframe>
-        </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1W9WRmzuo8/" target="_blank">Facebook</a>
+        <a href="https://www.tiktok.com/@confecciones_ivon?_t=ZM-8xLCoxJqpIk&_r=1" target="_blank">TikTok</a>
       </div>
     </section>
 
-    <!-- SECCIÓN: CONTACTO -->
+    <!-- ====== SECCIÓN: FORMULARIO ====== -->
+    <section class="section" id="formulario">
+      <h2>Formulario de Diseño</h2>
+      <p>Completa tus datos, medidas y fecha de prueba:</p>
+      <button id="openFormBtn" class="btn">Llenar formulario</button>
+      <div id="formContainer" style="display: none; margin-top:1rem;"></div>
+    </section>
+
+    <!-- ====== SECCIÓN: CONTACTO ====== -->
     <section class="section" id="contacto">
       <h2>Contáctanos</h2>
       <p>¿Tienes preguntas o deseas coordinar tu pedido? Escríbenos por WhatsApp.</p>
-      <a href="https://wa.me/51901766906" target="_blank" class="btn">WhatsApp</a>
+      <a href="https://wa.me/51901766906" target="_blank" class="btn">Escríbenos por WhatsApp</a>
+      <div class="pago">
+        <h3>Medios de pago</h3>
+        <p>Aceptamos Yape y pago físico</p>
+        <img src="https://marketing-peru.beglobal.biz/wp-content/uploads/2024/06/1-yape-logo-transparencia-2.png" alt="Yape" class="yape" />
+      </div>
     </section>
 
   </div>
-
   <!-- Botón flotante WhatsApp -->
   <a class="whatsapp" href="https://wa.me/51901766906" target="_blank">💬</a>
 
   <script src="script.js"></script>
 </body>
+
+</html>
 
 </html>
 
