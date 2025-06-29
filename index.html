@@ -104,19 +104,51 @@
     </section>
 
     <!-- ====== SECCIÓN: REDES SOCIALES ====== -->
-    <section class="section redes-sociales" id="redes-sociales">
-      <h2>Síguenos en Redes</h2>
-      <div class="social-columns">
-        <div class="social-column">
-          <h3>Facebook</h3>
-          <iframe src="https://www.facebook.com/share/1W9WRmzuo8/" width="300" height="200" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-        </div>
-        <div class="social-column">
-          <h3>TikTok</h3>
-          <iframe src="https://www.tiktok.com/@confecciones_ivon?_t=ZM-8xLCoxJqpIk&_r=1" width="300" height="200" frameborder="0" allow="encrypted-media"></iframe>
-        </div>
+  <section class="section redes-sociales" id="redes-sociales">
+  <h2>Síguenos en Redes</h2>
+  <div class="social-columns">
+
+    <!-- Facebook -->
+    <div class="social-column">
+      <h3>Facebook</h3>
+      <div id="fb-root"></div>
+      <div class="fb-page"
+           data-href="https://www.facebook.com/share/1W9WRmzuo8/"
+           data-tabs="timeline"
+           data-width="300"
+           data-height="200"
+           data-small-header="false"
+           data-adapt-container-width="true"
+           data-hide-cover="false"
+           data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/share/1W9WRmzuo8/" class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/share/1W9WRmzuo8/">Tu Página</a>
+        </blockquote>
       </div>
-    </section>
+    </div>
+
+    <!-- TikTok -->
+    <div class="social-column">
+      <h3>TikTok</h3>
+      <blockquote class="tiktok-embed"
+                  cite="https://www.tiktok.com/@confecciones_ivon?_t=ZM-8xLCoxJqpIk&_r=1"
+                  data-video-id="1234567890"
+                  style="max-width: 300px; min-width: 200px;">
+        <section> </section>
+      </blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- Scripts necesarios al final del body -->
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v17.0"
+  nonce="FbEmbed"></script>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+
 
     <!-- ====== SECCIÓN: FORMULARIO ====== -->
     <section class="section" id="formulario">
